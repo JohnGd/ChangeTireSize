@@ -18,7 +18,12 @@ import javax.swing.SwingConstants;
  * @author John G
  *
  */
-public class CustomFrame extends JDialog {
+public class IhmChoixFacteur extends JDialog {
+
+    /**
+     * 
+     */
+    private static final long serialVersionUID = -8158475165418086687L;
 
     /**
      * Le fenetre "conteneur" de l'IHM
@@ -58,7 +63,7 @@ public class CustomFrame extends JDialog {
     /**
      * Constructeur
      */
-    public CustomFrame() {
+    public IhmChoixFacteur() {
 	facteur = new Integer(0);
 	// Création du conteneur principal
 	initConteneur();
