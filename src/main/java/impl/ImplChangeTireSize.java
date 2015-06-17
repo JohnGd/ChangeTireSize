@@ -16,7 +16,7 @@ public class ImplChangeTireSize implements IAction {
     /**
      * Le facteur de multiplication renvoyé par l'IHM
      */
-    private Integer changeFactor;
+    private double changeFactor;
 
     /**
      * L'IHM

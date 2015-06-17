@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFormattedTextField;
@@ -58,7 +59,7 @@ public class IhmChoixFacteur extends JDialog {
     /**
      * Le facteur de multiplication de la taille des roues
      */
-    private Integer facteur;
+    private double facteur;
 
     /**
      * Constructeur
@@ -108,11 +109,19 @@ public class IhmChoixFacteur extends JDialog {
      * Initialise le JSpinner
      */
     private void initSpinner() {
-	spinnerFacteur = new JSpinner(new SpinnerNumberModel(1, 1, 10, 1));
+	double min = 0.5;
+	double value = 0.5;
+	double max = 5.0;
+	double stepSize = 0.1;
+	spinnerFacteur = new JSpinner(new SpinnerNumberModel(value, min, max, stepSize));
 	// Disable keyboard edits in the spinner
 	JFormattedTextField tf = ((JSpinner.DefaultEditor) spinnerFacteur.getEditor()).getTextField();
 	tf.setEditable(false);
 	tf.setBackground(Color.white);
+	// Double Format
+	JSpinner.NumberEditor editor = (JSpinner.NumberEditor) spinnerFacteur.getEditor();
+	DecimalFormat format = editor.getFormat();
+	format.setMinimumFractionDigits(1);
 	// JPanel
 	panelFacteur = new JPanel();
 	panelFacteur.setLayout(new FlowLayout(FlowLayout.CENTER));
@@ -132,7 +141,7 @@ public class IhmChoixFacteur extends JDialog {
 	button.addActionListener(new ActionListener() {
 
 	    public void actionPerformed(ActionEvent e) {
-		facteur = (Integer) spinnerFacteur.getValue();
+		facteur = (Double) spinnerFacteur.getValue();
 		window.dispose();
 	    }
 	});
@@ -143,7 +152,7 @@ public class IhmChoixFacteur extends JDialog {
     /**
      * @return le facteur choisi dans l'IHM
      */
-    public Integer getFactor() {
+    public double getFactor() {
 	return facteur;
     }
 

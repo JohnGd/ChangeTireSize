@@ -1,3 +1,5 @@
+import impl.ImplChangeTireSize;
+import org.pmr.interfaces.IAction;
 
 public class Principale {
 
@@ -11,5 +13,7 @@ public class Principale {
 	/**
 	 * Lancement de l'application
 	 */
+	IAction i = new ImplChangeTireSize();
+	i.performAction(null);
     }
 }
