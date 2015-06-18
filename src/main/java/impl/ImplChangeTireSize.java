@@ -38,7 +38,7 @@ public class ImplChangeTireSize implements IAction {
     /**
      * La classe ciblée par la modification du plugin
      */
-    private Class<?> targetedClass;
+    private String targetedClass;
 
     /*
      * (non-Javadoc)
@@ -113,7 +113,7 @@ public class ImplChangeTireSize implements IAction {
      * @see org.pmr.interfaces.IAction#getTargetedComponent()
      */
     @Override
-    public Class<?> getTargetedComponent() {
+    public String getTargetedComponent() {
 	return this.targetedClass;
     }
 
@@ -122,7 +122,7 @@ public class ImplChangeTireSize implements IAction {
      * @see org.pmr.interfaces.IAction#setTargetedComponent(java.lang.Class)
      */
     @Override
-    public void setTargetedComponent(Class<?> clazz) {
+    public void setTargetedComponent(String clazz) {
 	this.targetedClass = clazz;
     }
 }
