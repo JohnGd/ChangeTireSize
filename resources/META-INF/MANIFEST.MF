@@ -4,3 +4,4 @@ description-plugin: Plugin qui change la taille des roues
 nom-plugin: Taille pneus
 type-plugin: SECONDAIRE
 main-class: impl.ImplChangeTireSize
+targeted-class: model.Roue

@@ -38,6 +38,11 @@ public class ImplChangeTireSize implements IAction {
     private String actionId;
 
     /**
+     * La classe ciblée par la modification du plugin
+     */
+    private Class<?> targetedClass;
+
+    /**
      * Initialise le facteur de multiplication à partir de l'IHM
      */
     private void setFactor() {
@@ -109,12 +114,11 @@ public class ImplChangeTireSize implements IAction {
      * @see org.pmr.interfaces.IAction#performAction(org.pmr.interfaces.IComposantGraphique)
      */
     @Override
-    public IComposantGraphique performAction(IComposantGraphique victime) {
+    public void performAction(IComposantGraphique victime) {
 	setFactor();
 	double rayonActuel = victime.getRayon();
 	double newRayon = rayonActuel * changeFactor;
 	victime.setRayon(newRayon);
-	return victime;
     }
 
     /*
@@ -124,5 +128,23 @@ public class ImplChangeTireSize implements IAction {
     @Override
     public void setIDAction(String idAction) {
 	this.actionId = idAction;
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see org.pmr.interfaces.IAction#getTargetedComponent()
+     */
+    @Override
+    public Class<?> getTargetedComponent() {
+	return this.targetedClass;
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see org.pmr.interfaces.IAction#setTargetedComponent(java.lang.Class)
+     */
+    @Override
+    public void setTargetedComponent(Class<?> clazz) {
+	this.targetedClass = clazz;
     }
 }
