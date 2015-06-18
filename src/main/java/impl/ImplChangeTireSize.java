@@ -3,7 +3,6 @@ package impl;
 import ihm.IhmChoixFacteur;
 import java.awt.EventQueue;
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
 import org.pmr.interfaces.IAction;
 import org.pmr.interfaces.IComposantGraphique;
 
@@ -110,20 +109,12 @@ public class ImplChangeTireSize implements IAction {
      * @see org.pmr.interfaces.IAction#performAction(org.pmr.interfaces.IComposantGraphique)
      */
     @Override
-    public void performAction(IComposantGraphique victime) {
+    public IComposantGraphique performAction(IComposantGraphique victime) {
 	setFactor();
 	double rayonActuel = victime.getRayon();
 	double newRayon = rayonActuel * changeFactor;
 	victime.setRayon(newRayon);
-    }
-
-    /*
-     * (non-Javadoc)
-     * @see org.pmr.interfaces.IAction#getTargets()
-     */
-    @Override
-    public List<Class<?>> getTargets() {
-	return null;
+	return victime;
     }
 
     /*
