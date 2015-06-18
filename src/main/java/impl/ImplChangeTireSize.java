@@ -1,8 +1,6 @@
 package impl;
 
 import ihm.IhmChoixFacteur;
-import java.awt.EventQueue;
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import org.pmr.interfaces.IAction;
 import org.pmr.interfaces.IComposantGraphique;
@@ -37,28 +35,6 @@ public class ImplChangeTireSize implements IAction {
      * L'identifiant de l'action
      */
     private String actionId;
-
-    /**
-     * Initialise le facteur de multiplication à partir de l'IHM
-     */
-    private void setFactor() {
-	try {
-	    // Lance l'IHM
-	    EventQueue.invokeAndWait(new Runnable() {
-
-		public void run() {
-		    frame = new IhmChoixFacteur();
-		    frame.setVisible(true);
-		}
-	    });
-	} catch (InvocationTargetException e) {
-	    e.printStackTrace();
-	} catch (InterruptedException e) {
-	    e.printStackTrace();
-	}
-	changeFactor = frame.getFactor();
-	System.out.println(changeFactor);
-    }
 
     /*
      * (non-Javadoc)
@@ -111,7 +87,9 @@ public class ImplChangeTireSize implements IAction {
      */
     @Override
     public void performAction(IComposantGraphique victime) {
-	setFactor();
+	frame = new IhmChoixFacteur();
+	frame.setVisible(true);
+	changeFactor = frame.getFactor();
 	double rayonActuel = victime.getRayon();
 	double newRayon = rayonActuel * changeFactor;
 	victime.setRayon(newRayon);
