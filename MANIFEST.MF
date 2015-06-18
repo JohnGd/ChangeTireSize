@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-id-plugin: ChangeTireSize
-description-plugin: Plugin qui change la taille des roues
-nom-plugin: PluginChangeTireSize
-type-plugin: SECONDAIRE
-main-class: Principale

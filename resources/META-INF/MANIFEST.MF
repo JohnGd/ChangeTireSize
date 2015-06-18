@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 id-plugin: ChangeTireSize
 description-plugin: Plugin qui change la taille des roues
-nom-plugin: PluginChangeTireSize
+nom-plugin: Taille pneus
 type-plugin: SECONDAIRE
 main-class: impl.ImplChangeTireSize
