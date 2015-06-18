@@ -24,6 +24,21 @@ public class ImplChangeTireSize implements IAction {
     private IhmChoixFacteur frame;
 
     /**
+     * Le nom de l'action
+     */
+    private String nom;
+
+    /**
+     * La description de l'action
+     */
+    private String description;
+
+    /**
+     * L'identifiant de l'action
+     */
+    private String actionId;
+
+    /**
      * Initialise le facteur de multiplication à partir de l'IHM
      */
     private void setFactor() {
@@ -45,29 +60,56 @@ public class ImplChangeTireSize implements IAction {
 	System.out.println(changeFactor);
     }
 
+    /*
+     * (non-Javadoc)
+     * @see org.pmr.interfaces.IAction#getNom()
+     */
+    @Override
     public String getNom() {
-	// TODO Auto-generated method stub
-	return null;
+	return this.nom;
     }
 
+    /*
+     * (non-Javadoc)
+     * @see org.pmr.interfaces.IAction#setNom(java.lang.String)
+     */
+    @Override
     public void setNom(String nom) {
-	// TODO Auto-generated method stub
+	this.nom = nom;
     }
 
+    /*
+     * (non-Javadoc)
+     * @see org.pmr.interfaces.IAction#getDescription()
+     */
+    @Override
     public String getDescription() {
-	// TODO Auto-generated method stub
-	return null;
+	return this.description;
     }
 
+    /*
+     * (non-Javadoc)
+     * @see org.pmr.interfaces.IAction#setDescription(java.lang.String)
+     */
+    @Override
     public void setDescription(String description) {
-	// TODO Auto-generated method stub
+	this.description = description;
     }
 
+    /*
+     * (non-Javadoc)
+     * @see org.pmr.interfaces.IAction#getIDAction()
+     */
+    @Override
     public String getIDAction() {
-	// TODO Auto-generated method stub
-	return null;
+	return this.actionId;
     }
 
+    /*
+     * (non-Javadoc)
+     * @see org.pmr.interfaces.IAction#performAction(org.pmr.interfaces.IComposantGraphique)
+     */
+    @Override
     public void performAction(IComposantGraphique victime) {
 	setFactor();
 	double rayonActuel = victime.getRayon();
@@ -75,6 +117,11 @@ public class ImplChangeTireSize implements IAction {
 	victime.setRayon(newRayon);
     }
 
+    /*
+     * (non-Javadoc)
+     * @see org.pmr.interfaces.IAction#getTargets()
+     */
+    @Override
     public List<Class<?>> getTargets() {
 	// TODO Auto-generated method stub
 	return null;
