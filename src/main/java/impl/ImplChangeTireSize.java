@@ -123,7 +123,15 @@ public class ImplChangeTireSize implements IAction {
      */
     @Override
     public List<Class<?>> getTargets() {
-	// TODO Auto-generated method stub
 	return null;
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see org.pmr.interfaces.IAction#setIDAction(java.lang.String)
+     */
+    @Override
+    public void setIDAction(String idAction) {
+	this.actionId = idAction;
     }
 }
