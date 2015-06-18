@@ -1,12 +1,6 @@
 package impl;
 
 import ihm.IhmChoixFacteur;
-<<<<<<< HEAD
-import java.awt.EventQueue;
-import java.lang.reflect.InvocationTargetException;
-=======
-import java.util.List;
->>>>>>> origin/master
 import org.pmr.interfaces.IAction;
 import org.pmr.interfaces.IComposantGraphique;
 
@@ -45,28 +39,6 @@ public class ImplChangeTireSize implements IAction {
      * La classe ciblée par la modification du plugin
      */
     private Class<?> targetedClass;
-
-    /**
-     * Initialise le facteur de multiplication à partir de l'IHM
-     */
-    private void setFactor() {
-	try {
-	    // Lance l'IHM
-	    EventQueue.invokeAndWait(new Runnable() {
-
-		public void run() {
-		    frame = new IhmChoixFacteur();
-		    frame.setVisible(true);
-		}
-	    });
-	} catch (InvocationTargetException e) {
-	    e.printStackTrace();
-	} catch (InterruptedException e) {
-	    e.printStackTrace();
-	}
-	changeFactor = frame.getFactor();
-	System.out.println(changeFactor);
-    }
 
     /*
      * (non-Javadoc)
